@@ -6,7 +6,7 @@
   <title>Галина Савова – Портфолио</title>
   <style>
     :root {
-      --bg: #faf7f2;
+      --bg: #F4E9D8;          /* фонът е същият като този на илюстрацията */
       --card: #ffffff;
       --accent: #e0c7a8;
       --accent-dark: #c89b6d;
@@ -23,10 +23,10 @@
     }
 
     body {
-      position: relative; /* важно – за да може илюстрацията да е absolute към body */
+      position: relative;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--bg);
-      background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+      background-color: var(--bg); /* чист фон, без текстура */
+      background-image: none;
       color: var(--text-main);
       line-height: 1.7;
       overflow-x: hidden;
@@ -48,13 +48,14 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 0;
-      pointer-events: none; /* да не пречи на кликовете върху съдържанието */
+      pointer-events: none; /* да не пречи на кликовете */
     }
 
     .marionette-column-image {
       display: block;
-      width: min(380px, 75vw); /* ширина на колоната, да е красива на мобилно и десктоп */
+      width: min(380px, 75vw); /* ширина на колоната */
       height: auto;
+      min-height: 130vh;       /* леко “удължаваме”, за да стига към дъното */
     }
 
     /* всичко съдържание е над илюстрацията */
@@ -72,7 +73,7 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(250,247,242,0.96), rgba(250,247,242,0.9));
+      background: linear-gradient(to bottom, rgba(244,233,216,0.96), rgba(244,233,216,0.9));
       border-bottom: 1px solid rgba(0,0,0,0.04);
     }
 
@@ -487,6 +488,7 @@
 
   <!-- Високата илюстрация на марионетката (фон, но не е background-image) -->
   <div class="marionette-column-wrapper">
+    <!-- смени пътя към твоята дълга картинка -->
     <img src="images/marionette-column.png"
          alt="Марионетка – ръка и кукла"
          class="marionette-column-image">
