@@ -112,54 +112,43 @@
       width: 100%;
     }
 
-    /* Marionette visual */
-    .marionette-wrapper {
-      position: relative;
+    /* Marionette hero visual – една обща илюстрация */
+    .marionette-hero {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 20px 10px;
+      padding: 28px 20px 8px;
     }
 
-    .marionette-hand {
+    .marionette-hero-inner {
       position: relative;
+      height: min(480px, 80vh);
       display: flex;
       justify-content: center;
-      margin-bottom: 10px;
+      align-items: flex-start;
     }
 
-    .hand-image {
-      width: 180px;
-      height: 110px;
-      border-radius: var(--radius-xl);
-      border: 1px dashed rgba(0,0,0,0.15);
-      background: rgba(255,255,255,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      color: var(--text-soft);
-      box-shadow: var(--shadow-soft);
-      text-align: center;
-      padding: 10px;
-    }
-
-    .marionette-strings {
+    .marionette-hero-inner::after {
+      /* лек градиент към фона, за да се слее */
+      content: "";
       position: absolute;
-      top: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 260px;
+      inset: 0;
+      background: radial-gradient(circle at bottom, rgba(250,247,242,0.9) 0%, rgba(250,247,242,0) 55%);
       pointer-events: none;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 20px;
-      height: calc(100vh - 40px);
     }
 
-    .marionette-strings span {
-      width: 1.5px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.05));
-      border-radius: 999px;
+    .marionette-image {
+      height: 100%;
+      max-height: 480px;
+      filter: drop-shadow(0 16px 32px rgba(0,0,0,0.12));
+    }
+
+    @media (max-width: 600px) {
+      .marionette-hero-inner {
+        height: 380px;
+      }
+      .marionette-image {
+        max-height: 380px;
+      }
     }
 
     .hero {
@@ -176,9 +165,6 @@
     @media (max-width: 800px) {
       .hero {
         grid-template-columns: 1fr;
-      }
-      .marionette-strings {
-        display: none; /* по-малко претрупано на телефон */
       }
     }
 
@@ -554,14 +540,12 @@
     </div>
   </div>
 
-  <div class="marionette-wrapper">
-    <div class="marionette-hand">
-      <div class="hand-image">
-        Тук по-късно сложи снимка на ръка<br>с марионетен кръст
-      </div>
-      <div class="marionette-strings" aria-hidden="true">
-        <span></span><span></span><span></span><span></span>
-      </div>
+  <!-- Тук е илюстрацията с ръката и куклата -->
+  <div class="marionette-hero">
+    <div class="marionette-hero-inner">
+      <img src="images/marionette.png"
+           alt="Марионетка – ръка и кукла"
+           class="marionette-image">
     </div>
   </div>
 
