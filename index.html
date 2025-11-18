@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Галина Савова – Портфолио</title>
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --card: #ffffff;
+      --accent: #e0c7a8;
+      --accent-dark: #c89b6d;
+      --text-main: #333333;
+      --text-soft: #666666;
+      --shadow-soft: 0 16px 40px rgba(0,0,0,0.08);
+      --radius-xl: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Top navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(250,247,242,0.96), rgba(250,247,242,0.9));
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent-dark);
+      background: rgba(255,255,255,0.9);
+    }
+
+    .nav-name {
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--accent-dark);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Marionette visual */
+    .marionette-wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 10px;
+    }
+
+    .marionette-hand {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .hand-image {
+      width: 180px;
+      height: 110px;
+      border-radius: var(--radius-xl);
+      border: 1px dashed rgba(0,0,0,0.15);
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      padding: 10px;
+    }
+
+    .marionette-strings {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 260px;
+      pointer-events: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      height: calc(100vh - 40px);
+    }
+
+    .marionette-strings span {
+      width: 1.5px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.05));
+      border-radius: 999px;
+    }
+
+    .hero {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 20px 60px;
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .marionette-strings {
+        display: none; /* по-малко претрупано на телефон */
+      }
+    }
+
+    .hero-text h1 {
+      font-size: clamp(32px, 4vw, 44px);
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.05);
+      background: rgba(255,255,255,0.9);
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    .hero-highlight {
+      background: rgba(224,199,168,0.16);
+      padding: 14px 16px;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 20px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-dark), #f0b27a);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(200,155,109,0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.9);
+      color: var(--text-main);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: var(--radius-xl);
+      padding: 22px 22px 18px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .hero-card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .hero-card-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .hero-card-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(250,247,242,0.9);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 10px;
+    }
+
+    .section-inner {
+      background: rgba(255,255,255,0.94);
+      border-radius: var(--radius-xl);
+      padding: 28px 26px 26px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin-bottom: 20px;
+    }
+
+    .split-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 800px) {
+      .split-two {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .text-block p {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .list,
+    .list-compact {
+      list-style: none;
+    }
+
+    .list li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .list-compact li {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .badge-year {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 54px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: rgba(224,199,168,0.18);
+      margin-right: 8px;
+    }
+
+    /* Video section */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .video-card {
+      background: rgba(250,247,242,0.9);
+      border-radius: 18px;
+      padding: 16px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .qr-box {
+      width: 120px;
+      height: 120px;
+      border-radius: 18px;
+      background: repeating-linear-gradient(45deg, #f4ede4, #f4ede4 6px, #e9ddcf 6px, #e9ddcf 12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-soft);
+      align-self: center;
+      text-align: center;
+      padding: 6px;
+    }
+
+    .video-card-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .video-card p {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    /* Gallery slider */
+    .gallery-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      background: #000;
+    }
+
+    .gallery-track {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-slide {
+      min-width: 100%;
+      height: 360px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05));
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .gallery-controls {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .gallery-btn {
+      pointer-events: auto;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+
+    .gallery-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
+
+    .gallery-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.5);
+    }
+
+    .gallery-dot.active {
+      width: 18px;
+      background: #ffffff;
+    }
+
+    /* Marionette puppet footer visual */
+    .marionette-puppet {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .puppet-image {
+      width: 160px;
+      height: 160px;
+      border-radius: 999px;
+      border: 1px dashed rgba(0,0,0,0.2);
+      background: rgba(255,255,255,0.96);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      padding: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-soft);
+      padding: 10px 20px 26px;
+    }
+
+    /* Reveal animation */
+    header, section {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    header.reveal, section.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <div class="nav-logo-circle">ГС</div>
+        <div class="nav-name">ГАЛИНА САВОВА</div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">За мен</a>
+        <a href="#work">Спектакли</a>
+        <a href="#awards">Награди</a>
+        <a href="#video">Видео</a>
+        <a href="#gallery">Галерия</a>
+        <a href="#contact">Контакт</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="marionette-wrapper">
+    <div class="marionette-hand">
+      <div class="hand-image">
+        Тук по-късно сложи снимка на ръка<br>с марионетен кръст
+      </div>
+      <div class="marionette-strings" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <header id="about">
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-pill">Актриса • Куклен артист • Режисьор</div>
+        <h1>Аз съм Галина Савова.</h1>
+        <div class="hero-subtitle">Театър, кукли и кино – истории, които оживяват.</div>
+        <div class="hero-highlight">
+          Аз съм актриса с дългогодишен опит в кукления и драматичния театър и участие като кукловод във филмовата продукция <strong>„Automata“ с Антонио Бандерас</strong>. Обичам да съчетавам поетика, движение и игра с предмети, за да разказвам истории за деца и възрастни.
+        </div>
+        <div class="hero-meta">
+          <span>Базирана в София, България</span>
+          <span>Над 25 години професионален опит</span>
+          <span>Театър, кино, фестивали, ателиета</span>
+        </div>
+        <div class="hero-buttons">
+          <a href="#work" class="btn-primary">Виж избрани спектакли</a>
+          <a href="#video" class="btn-ghost">Видео портфолио</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="hero-card-tag">Кратко за мен</div>
+        <h2>Актриса, която вярва в силата на играта.</h2>
+        <p>Работя със сцена, камера, кукли, маски и предмети. Вълнувам се от срещата с публиката – от бебета, които за първи път стъпват в театър, до възрастни, които се връщат към своето детство.</p>
+        <p>Като режисьор създавам спектакли за най-малките, в които звукът, жестът и образът са толкова важни, колкото и думите.</p>
+        <div class="hero-card-pill-row">
+          <span class="hero-card-pill">Куклен и драматичен театър</span>
+          <span class="hero-card-pill">Фестивали в България и чужбина</span>
+          <span class="hero-card-pill">Работа с деца и ателиета</span>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="section-inner split-two">
+      <div class="text-block">
+        <h2 class="section-title">Избрани спектакли</h2>
+        <p class="section-subtitle">Някои от ролите и постановките, които най-силно ме описват като актриса и режисьор.</p>
+        <p>През годините съм имала щастието да работя в Държавен куклен театър – Търговище и в <strong>Столичен куклен театър</strong>, както и по множество независими и фестивални проекти. Обичам да преминавам от комедия към поетични визуални спектакли, да смесвам кукли, жив план и музика.</p>
+      </div>
+      <div>
+        <ul class="list">
+          <li><strong>„Косе-Босе“</strong> – актриса, Държавен куклен театър Търговище</li>
+          <li><strong>„Принцесата и свинчарчето“</strong> – актриса, Държавен куклен театър Търговище</li>
+          <li><strong>„Не спящата красавица“</strong> – актриса, Столичен куклен театър</li>
+          <li><strong>„Карнавал на животните“</strong> – актриса, Столичен куклен театър</li>
+          <li><strong>„Картини от една изложба“</strong> – актриса, Столичен куклен театър</li>
+          <li><strong>„Питър Пан“</strong> – актриса, Столичен куклен театър</li>
+          <li><strong>„Златка, златното момче“</strong> – актриса, Столичен куклен театър</li>
+          <li><strong>„Кой съм аз“</strong> – режисьор, Държавен куклен театър Пловдив</li>
+          <li><strong>„Светлинка“</strong> – режисьор, спектакъл за деца над 1 г., Столичен куклен театър</li>
+          <li><strong>„Ту тук, ту там“</strong> – режисьор, представление за бебета, Общински куклен театър Благоевград</li>
+          <li><strong>„Трите прасенца“</strong> – режисьор, спектакъл за деца 3–5 г., Общински куклен театър Благоевград</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <div class="section-inner">
+      <h2 class="section-title">Награди и признание</h2>
+      <p class="section-subtitle">Отражение на срещите ми с публиката, колегите и журитата.</p>
+      <ul class="list">
+        <li><span class="badge-year">1998</span>Награда <strong>„Куклар“</strong> за най-добра актриса за ролята ми в спектакъла <strong>„Косе-Босе“</strong>.</li>
+        <li><span class="badge-year">2000</span>Награда на Съюза на артистите в България <strong>„Икар“</strong> за най-добро куклено представление за спектакъла <strong>„Златка, златното момче“</strong>.</li>
+        <li><span class="badge-year">2010</span>Номинация за наградата на САБ <strong>„Икар“</strong> за куклено изкуство за участието ми в спектакъла <strong>„Питър Пан“</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="section-inner">
+      <h2 class="section-title">Видео портфолио</h2>
+      <p class="section-subtitle">Селекция от кадри, които показват част от моята работа. Във финалната версия тук ще има реални QR кодове към видеата.</p>
+
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="qr-box">QR код<br>Видео 1</div>
+          <div class="video-card-title">Фрагмент от сценична работа</div>
+          <p>Кратко видео, в което можете да видите енергията ми на сцена, работата с кукла и контакт с публиката.</p>
+          <p><strong>Линк:</strong> <a href="https://share.google/bGxCo8KCg0n7bO0tZ" target="_blank" rel="noopener">Отвори видеото</a></p>
+        </article>
+
+        <article class="video-card">
+          <div class="qr-box">QR код<br>Видео 2</div>
+          <div class="video-card-title">Зад кулисите / кукловодна техника</div>
+          <p>Поглед към процеса – репетиции, кукловодство отблизо и усещането за игра преди срещата с публиката.</p>
+          <p><strong>Линк:</strong> <a href="https://share.google/aAZ6sOj75IFm0NJS9" target="_blank" rel="noopener">Отвори видеото</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-inner">
+      <h2 class="section-title">Галерия</h2>
+      <p class="section-subtitle">В момента снимките са примерни. Лесно можеш да ги смениш по-късно с твои кадри от сцена, репетиции и фестивали.</p>
+
+      <div class="gallery-wrapper">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-slide" style="background-image:url('https://images.pexels.com/photos/964609/pexels-photo-964609.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-caption">Примерна театрална сцена – Снимка 1</div>
+          </div>
+          <div class="gallery-slide" style="background-image:url('https://images.pexels.com/photos/167404/pexels-photo-167404.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-caption">Примерен кадър от репетиция – Снимка 2</div>
+          </div>
+          <div class="gallery-slide" style="background-image:url('https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-caption">Примерно куклено представление – Снимка 3</div>
+          </div>
+        </div>
+
+        <div class="gallery-controls">
+          <button class="gallery-btn" id="prevBtn" aria-label="Предишна снимка">‹</button>
+          <button class="gallery-btn" id="nextBtn" aria-label="Следваща снимка">›</button>
+        </div>
+
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+
+      <p style="font-size:13px; color:var(--text-soft); margin-top:10px;">
+        За да смениш снимките, просто замени URL адресите в
+        <code>style="background-image:url('...')</code> на всяка
+        <code>.gallery-slide</code> с линкове към твоите снимки.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-inner split-two">
+      <div class="text-block">
+        <h2 class="section-title">Контакт</h2>
+        <p class="section-subtitle">За театрални проекти, фестивали, уъркшопи и партньорства.</p>
+        <p>Отворена съм за участие в нови спектакли, фестивални програми, обучения за деца и възрастни, както и съвместни проекти между театър, визуални изкуства и социални каузи.</p>
+      </div>
+      <div>
+        <ul class="list-compact">
+          <li><strong>E-mail:</strong> galina.savova.art@gmail.com</li>
+          <li><strong>Телефон:</strong> +359 878 734 638</li>
+          <li>По желание тук могат да се добавят линкове към социални мрежи / уебсайт.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="marionette-puppet">
+    <div class="puppet-image">
+      Тук по-късно сложи снимка<br>на куклата / персонаж
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Галина Савова – Портфолио
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const revealElements = document.querySelectorAll('header, section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // Simple gallery slider
+    const track = document.getElementById('galleryTrack');
+    const slides = Array.from(document.querySelectorAll('.gallery-slide'));
+    const dotsContainer = document.getElementById('galleryDots');
+    let currentIndex = 0;
+
+    function renderDots() {
+      dotsContainer.innerHTML = '';
+      slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'gallery-dot' + (index === currentIndex ? ' active' : '');
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateSlider() {
+      const offset = -currentIndex * 100;
+      track.style.transform = `translateX(${offset}%)`;
+      const dots = dotsContainer.querySelectorAll('.gallery-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlider();
+    });
+
+    renderDots();
+    updateSlider();
+  </script>
+
+</body>
+</html>
