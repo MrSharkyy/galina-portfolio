@@ -112,7 +112,7 @@
       width: 100%;
     }
 
-    /* Marionette hero visual – една обща илюстрация */
+    /* Marionette hero visual */
     .marionette-hero {
       max-width: 1100px;
       margin: 0 auto;
@@ -128,7 +128,6 @@
     }
 
     .marionette-hero-inner::after {
-      /* лек градиент към фона, за да се слее */
       content: "";
       position: absolute;
       inset: 0;
@@ -141,7 +140,6 @@
       max-height: 480px;
       filter: drop-shadow(0 16px 32px rgba(0,0,0,0.12));
     }
-
     @media (max-width: 600px) {
       .marionette-hero-inner {
         height: 380px;
@@ -394,7 +392,7 @@
       color: var(--text-soft);
     }
 
-    /* Gallery slider */
+    /* Gallery */
     .gallery-wrapper {
       position: relative;
       overflow: hidden;
@@ -476,7 +474,7 @@
       background: #ffffff;
     }
 
-    /* Marionette puppet footer visual */
+    /* Puppet footer */
     .marionette-puppet {
       max-width: 1100px;
       margin: 0 auto;
@@ -489,15 +487,12 @@
       width: 160px;
       height: 160px;
       border-radius: 999px;
-      border: 1px dashed rgba(0,0,0,0.2);
       background: rgba(255,255,255,0.96);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 13px;
-      color: var(--text-soft);
       box-shadow: var(--shadow-soft);
-      text-align: center;
+      object-fit: contain;
       padding: 10px;
     }
 
@@ -521,8 +516,8 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <div class="nav">
     <div class="nav-inner">
       <div class="nav-left">
@@ -540,12 +535,10 @@
     </div>
   </div>
 
-  <!-- Тук е илюстрацията с ръката и куклата -->
+  <!-- Тук е ръката -->
   <div class="marionette-hero">
     <div class="marionette-hero-inner">
-      <img src="images/marionette.png"
-           alt="Марионетка – ръка и кукла"
-           class="marionette-image">
+      <img src="images/handmarionette.png" class="marionette-image" alt="Марионетка">
     </div>
   </div>
 
@@ -555,27 +548,32 @@
         <div class="hero-pill">Актриса • Куклен артист • Режисьор</div>
         <h1>Аз съм Галина Савова.</h1>
         <div class="hero-subtitle">Театър, кукли и кино – истории, които оживяват.</div>
+
         <div class="hero-highlight">
           Аз съм актриса с дългогодишен опит в кукления и драматичния театър и участие като кукловод във филмовата продукция <strong>„Automata“ с Антонио Бандерас</strong>. Обичам да съчетавам поетика, движение и игра с предмети, за да разказвам истории за деца и възрастни.
         </div>
+
         <div class="hero-meta">
           <span>Базирана в София, България</span>
           <span>Над 25 години професионален опит</span>
           <span>Театър, кино, фестивали, ателиета</span>
         </div>
+
         <div class="hero-buttons">
           <a href="#work" class="btn-primary">Виж избрани спектакли</a>
           <a href="#video" class="btn-ghost">Видео портфолио</a>
         </div>
       </div>
+
       <aside class="hero-card">
         <div class="hero-card-tag">Кратко за мен</div>
         <h2>Актриса, която вярва в силата на играта.</h2>
         <p>Работя със сцена, камера, кукли, маски и предмети. Вълнувам се от срещата с публиката – от бебета, които за първи път стъпват в театър, до възрастни, които се връщат към своето детство.</p>
-        <p>Като режисьор създавам спектакли за най-малките, в които звукът, жестът и образът са толкова важни, колкото и думите.</p>
+        <p>Като режисьор създавам спектакли за най-малките.</p>
+
         <div class="hero-card-pill-row">
           <span class="hero-card-pill">Куклен и драматичен театър</span>
-          <span class="hero-card-pill">Фестивали в България и чужбина</span>
+          <span class="hero-card-pill">Фестивали международно</span>
           <span class="hero-card-pill">Работа с деца и ателиета</span>
         </div>
       </aside>
@@ -586,58 +584,60 @@
     <div class="section-inner split-two">
       <div class="text-block">
         <h2 class="section-title">Избрани спектакли</h2>
-        <p class="section-subtitle">Някои от ролите и постановките, които най-силно ме описват като актриса и режисьор.</p>
-        <p>През годините съм имала щастието да работя в Държавен куклен театър – Търговище и в <strong>Столичен куклен театър</strong>, както и по множество независими и фестивални проекти. Обичам да преминавам от комедия към поетични визуални спектакли, да смесвам кукли, жив план и музика.</p>
+        <p class="section-subtitle">Роли и постановки, които най-силно ме описват.</p>
+
+        <p>Работила съм в Държавен куклен театър – Търговище и <strong>Столичен куклен театър</strong>. Участвала съм в множество фестивали и проекти.</p>
       </div>
-      <div>
-        <ul class="list">
-          <li><strong>„Косе-Босе“</strong> – актриса, Държавен куклен театър Търговище</li>
-          <li><strong>„Принцесата и свинчарчето“</strong> – актриса, Държавен куклен театър Търговище</li>
-          <li><strong>„Не спящата красавица“</strong> – актриса, Столичен куклен театър</li>
-          <li><strong>„Карнавал на животните“</strong> – актриса, Столичен куклен театър</li>
-          <li><strong>„Картини от една изложба“</strong> – актриса, Столичен куклен театър</li>
-          <li><strong>„Питър Пан“</strong> – актриса, Столичен куклен театър</li>
-          <li><strong>„Златка, златното момче“</strong> – актриса, Столичен куклен театър</li>
-          <li><strong>„Кой съм аз“</strong> – режисьор, Държавен куклен театър Пловдив</li>
-          <li><strong>„Светлинка“</strong> – режисьор, спектакъл за деца над 1 г., Столичен куклен театър</li>
-          <li><strong>„Ту тук, ту там“</strong> – режисьор, представление за бебета, Общински куклен театър Благоевград</li>
-          <li><strong>„Трите прасенца“</strong> – режисьор, спектакъл за деца 3–5 г., Общински куклен театър Благоевград</li>
-        </ul>
-      </div>
+
+      <ul class="list">
+        <li><strong>„Косе-Босе“</strong> – актриса</li>
+        <li><strong>„Принцесата и свинчарчето“</strong> – актриса</li>
+        <li><strong>„Не спящата красавица“</strong> – актриса</li>
+        <li><strong>„Карнавал на животните“</strong> – актриса</li>
+        <li><strong>„Картини от една изложба“</strong> – актриса</li>
+        <li><strong>„Питър Пан“</strong> – актриса</li>
+        <li><strong>„Златка, златното момче“</strong> – актриса</li>
+        <li><strong>„Кой съм аз“</strong> – режисьор</li>
+        <li><strong>„Светлинка“</strong> – режисьор</li>
+        <li><strong>„Ту тук, ту там“</strong> – режисьор</li>
+        <li><strong>„Трите прасенца“</strong> – режисьор</li>
+      </ul>
     </div>
   </section>
 
   <section id="awards">
     <div class="section-inner">
-      <h2 class="section-title">Награди и признание</h2>
-      <p class="section-subtitle">Отражение на срещите ми с публиката, колегите и журитата.</p>
+      <h2 class="section-title">Награди</h2>
+      <p class="section-subtitle">Признание от публиката и професионалната общност.</p>
+
       <ul class="list">
-        <li><span class="badge-year">1998</span>Награда <strong>„Куклар“</strong> за най-добра актриса за ролята ми в спектакъла <strong>„Косе-Босе“</strong>.</li>
-        <li><span class="badge-year">2000</span>Награда на Съюза на артистите в България <strong>„Икар“</strong> за най-добро куклено представление за спектакъла <strong>„Златка, златното момче“</strong>.</li>
-        <li><span class="badge-year">2010</span>Номинация за наградата на САБ <strong>„Икар“</strong> за куклено изкуство за участието ми в спектакъла <strong>„Питър Пан“</strong>.</li>
+        <li><span class="badge-year">1998</span>Награда <strong>„Куклар“</strong> – най-добра актриса</li>
+        <li><span class="badge-year">2000</span><strong>„Икар“</strong> – най-добро куклено представление</li>
+        <li><span class="badge-year">2010</span><strong>Номинация „Икар“</strong> – за „Питър Пан“</li>
       </ul>
     </div>
   </section>
-
   <section id="video">
     <div class="section-inner">
       <h2 class="section-title">Видео портфолио</h2>
-      <p class="section-subtitle">Селекция от кадри, които показват част от моята работа. Във финалната версия тук ще има реални QR кодове към видеата.</p>
+      <p class="section-subtitle">Подбрани видеа от сценична работа и репетиции.</p>
 
       <div class="video-grid">
+
         <article class="video-card">
           <div class="qr-box">QR код<br>Видео 1</div>
-          <div class="video-card-title">Фрагмент от сценична работа</div>
-          <p>Кратко видео, в което можете да видите енергията ми на сцена, работата с кукла и контакт с публиката.</p>
-          <p><strong>Линк:</strong> <a href="https://share.google/bGxCo8KCg0n7bO0tZ" target="_blank" rel="noopener">Отвори видеото</a></p>
+          <div class="video-card-title">Сценичен фрагмент</div>
+          <p>Енергия на сцена, кукловодство и взаимодействие с публиката.</p>
+          <p><strong>Линк:</strong> <a href="https://share.google/bGxCo8KCg0n7bO0tZ" target="_blank">Отвори</a></p>
         </article>
 
         <article class="video-card">
           <div class="qr-box">QR код<br>Видео 2</div>
-          <div class="video-card-title">Зад кулисите / кукловодна техника</div>
-          <p>Поглед към процеса – репетиции, кукловодство отблизо и усещането за игра преди срещата с публиката.</p>
-          <p><strong>Линк:</strong> <a href="https://share.google/aAZ6sOj75IFm0NJS9" target="_blank" rel="noopener">Отвори видеото</a></p>
+          <div class="video-card-title">Кукловодна техника</div>
+          <p>Зад кулисите – процес, движение и подготовка.</p>
+          <p><strong>Линк:</strong> <a href="https://share.google/aAZ6sOj75IFm0NJS9" target="_blank">Отвори</a></p>
         </article>
+
       </div>
     </div>
   </section>
@@ -645,37 +645,38 @@
   <section id="gallery">
     <div class="section-inner">
       <h2 class="section-title">Галерия</h2>
-      <p class="section-subtitle">В момента снимките са примерни. Лесно можеш да ги смениш по-късно с твои кадри от сцена, репетиции и фестивали.</p>
+      <p class="section-subtitle">Снимките са примерни – можеш да ги смениш лесно.</p>
 
       <div class="gallery-wrapper">
         <div class="gallery-track" id="galleryTrack">
-          <div class="gallery-slide" style="background-image:url('https://images.pexels.com/photos/964609/pexels-photo-964609.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+
+          <div class="gallery-slide"
+               style="background-image:url('https://images.pexels.com/photos/964609/pexels-photo-964609.jpeg?auto=compress&cs=tinysrgb&w=1200');">
             <div class="gallery-overlay"></div>
-            <div class="gallery-caption">Примерна театрална сцена – Снимка 1</div>
+            <div class="gallery-caption">Снимка 1</div>
           </div>
-          <div class="gallery-slide" style="background-image:url('https://images.pexels.com/photos/167404/pexels-photo-167404.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+
+          <div class="gallery-slide"
+               style="background-image:url('https://images.pexels.com/photos/167404/pexels-photo-167404.jpeg?auto=compress&cs=tinysrgb&w=1200');">
             <div class="gallery-overlay"></div>
-            <div class="gallery-caption">Примерен кадър от репетиция – Снимка 2</div>
+            <div class="gallery-caption">Снимка 2</div>
           </div>
-          <div class="gallery-slide" style="background-image:url('https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1200');">
+
+          <div class="gallery-slide"
+               style="background-image:url('https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&w=1200');">
             <div class="gallery-overlay"></div>
-            <div class="gallery-caption">Примерно куклено представление – Снимка 3</div>
+            <div class="gallery-caption">Снимка 3</div>
           </div>
+
         </div>
 
         <div class="gallery-controls">
-          <button class="gallery-btn" id="prevBtn" aria-label="Предишна снимка">‹</button>
-          <button class="gallery-btn" id="nextBtn" aria-label="Следваща снимка">›</button>
+          <button class="gallery-btn" id="prevBtn">‹</button>
+          <button class="gallery-btn" id="nextBtn">›</button>
         </div>
 
         <div class="gallery-dots" id="galleryDots"></div>
       </div>
-
-      <p style="font-size:13px; color:var(--text-soft); margin-top:10px;">
-        За да смениш снимките, просто замени URL адресите в
-        <code>style="background-image:url('...')</code> на всяка
-        <code>.gallery-slide</code> с линкове към твоите снимки.
-      </p>
     </div>
   </section>
 
@@ -683,75 +684,69 @@
     <div class="section-inner split-two">
       <div class="text-block">
         <h2 class="section-title">Контакт</h2>
-        <p class="section-subtitle">За театрални проекти, фестивали, уъркшопи и партньорства.</p>
-        <p>Отворена съм за участие в нови спектакли, фестивални програми, обучения за деца и възрастни, както и съвместни проекти между театър, визуални изкуства и социални каузи.</p>
+        <p class="section-subtitle">За проекти, фестивали и партньорства.</p>
+        <p>Отворена съм за нови спектакли, участия, обучения и артистични колаборации.</p>
       </div>
-      <div>
-        <ul class="list-compact">
-          <li><strong>E-mail:</strong> galina.savova.art@gmail.com</li>
-          <li><strong>Телефон:</strong> +359 878 734 638</li>
-          <li>По желание тук могат да се добавят линкове към социални мрежи / уебсайт.</li>
-        </ul>
-      </div>
+
+      <ul class="list-compact">
+        <li><strong>E-mail:</strong> galina.savova.art@gmail.com</li>
+        <li><strong>Телефон:</strong> +359 878 734 638</li>
+      </ul>
     </div>
   </section>
 
+  <!-- ДОЛУ — СНИМКА НА КУКЛАТА -->
   <div class="marionette-puppet">
-    <div class="puppet-image">
-      Тук по-късно сложи снимка<br>на куклата / персонаж
-    </div>
+    <img src="images/puppetmarionette.png" class="puppet-image" alt="Кукла">
   </div>
 
   <footer>
     © 2025 Галина Савова – Портфолио
   </footer>
 
+  <!-- Скриптове -->
   <script>
     // Reveal on scroll
     const revealElements = document.querySelectorAll('header, section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal');
-        }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('reveal');
       });
     }, { threshold: 0.15 });
 
     revealElements.forEach(el => observer.observe(el));
 
-    // Simple gallery slider
+    // Gallery slider
     const track = document.getElementById('galleryTrack');
-    const slides = Array.from(document.querySelectorAll('.gallery-slide'));
+    const slides = document.querySelectorAll('.gallery-slide');
     const dotsContainer = document.getElementById('galleryDots');
     let currentIndex = 0;
 
     function renderDots() {
-      dotsContainer.innerHTML = '';
-      slides.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = 'gallery-dot' + (index === currentIndex ? ' active' : '');
+      dotsContainer.innerHTML = "";
+      slides.forEach((_, i) => {
+        const dot = document.createElement("div");
+        dot.className = "gallery-dot" + (i === currentIndex ? " active" : "");
         dotsContainer.appendChild(dot);
       });
     }
 
     function updateSlider() {
-      const offset = -currentIndex * 100;
-      track.style.transform = `translateX(${offset}%)`;
-      const dots = dotsContainer.querySelectorAll('.gallery-dot');
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
+      track.style.transform = `translateX(${-currentIndex * 100}%)`;
+      [...dotsContainer.children].forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex);
       });
     }
 
-    document.getElementById('prevBtn').addEventListener('click', () => {
+    document.getElementById('prevBtn').onclick = () => {
       currentIndex = (currentIndex - 1 + slides.length) % slides.length;
       updateSlider();
-    });
+    };
 
-    document.getElementById('nextBtn').addEventListener('click', () => {
+    document.getElementById('nextBtn').onclick = () => {
       currentIndex = (currentIndex + 1) % slides.length;
       updateSlider();
-    });
+    };
 
     renderDots();
     updateSlider();
