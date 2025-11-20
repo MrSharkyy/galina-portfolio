@@ -6,7 +6,7 @@
   <title>Галина Савова – Портфолио</title>
   <style>
     :root {
-      --bg: #F4E9D8;          /* фонът е същият като този на илюстрацията */
+      --bg: #F4E9D8;
       --card: #ffffff;
       --accent: #e0c7a8;
       --accent-dark: #c89b6d;
@@ -25,7 +25,7 @@
     body {
       position: relative;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--bg); /* чист фон, без текстура */
+      background-color: var(--bg);
       background-image: none;
       color: var(--text-main);
       line-height: 1.7;
@@ -48,14 +48,14 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 0;
-      pointer-events: none; /* да не пречи на кликовете */
+      pointer-events: none;
     }
 
     .marionette-column-image {
       display: block;
-      width: min(380px, 75vw); /* ширина на колоната */
+      width: min(380px, 75vw);
       height: auto;
-      min-height: 130vh;       /* леко “удължаваме”, за да стига към дъното */
+      min-height: 130vh;
     }
 
     /* всичко съдържание е над илюстрацията */
@@ -271,29 +271,30 @@
       background: rgba(250,247,242,0.9);
       border: 1px solid rgba(0,0,0,0.04);
     }
+
     .hero-photo-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.hero-photo-frame {
-  width: 280px;
-  height: 280px;
-  border-radius: 999px;
-  padding: 8px;
-  background: rgba(255,255,255,0.7);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.16);
-  backdrop-filter: blur(4px);
-  animation: fadeUp 1.2s ease both;
-}
+    .hero-photo-frame {
+      width: 280px;
+      height: 280px;
+      border-radius: 999px;
+      padding: 8px;
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.16);
+      backdrop-filter: blur(4px);
+      animation: fadeUp 1.2s ease both;
+    }
 
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  border-radius: 999px;
-  object-fit: cover;
-}
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      object-fit: cover;
+    }
 
     /* Sections */
     section {
@@ -405,89 +406,89 @@
       color: var(--text-soft);
     }
 
-  .gallery-wrapper {
-position: relative;
-overflow: hidden;              /* нищо извън кадър не се вижда */
-border-radius: 20px;
-box-shadow: var(--shadow-soft);
-background: #000;
-}
+    /* GALERY */
+    .gallery-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      background: #000;
+    }
 
-.gallery-track {
-display: flex;
-will-change: transform;
-transition: transform 0.6s ease;
-width: 100%;
-}
+    .gallery-track {
+      display: flex;
+      will-change: transform;
+      transition: transform 0.6s ease;
+      width: 100%;
+    }
 
-.gallery-slide {
-flex: 0 0 100%;                /* всяка снимка заема точно 100% */
-height: 360px;
-position: relative;
-background-size: cover;
-background-position: center;
-}
+    .gallery-slide {
+      flex: 0 0 100%;
+      height: 360px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
 
-.gallery-overlay {
-position: absolute;
-inset: 0;
-background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05));
-}
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.05));
+    }
 
-.gallery-caption {
-position: absolute;
-left: 20px;
-bottom: 20px;
-color: #fff;
-font-size: 14px;
-}
+    .gallery-caption {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      color: #fff;
+      font-size: 14px;
+    }
 
-.gallery-controls {
-position: absolute;
-inset: 0;
-display: flex;
-align-items: center;
-justify-content: space-between;
-pointer-events: none;
-}
+    .gallery-controls {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
 
-.gallery-btn {
-pointer-events: auto;
-border: none;
-width: 34px;
-height: 34px;
-border-radius: 999px;
-background: rgba(255,255,255,0.92);
-box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 18px;
-cursor: pointer;
-margin: 0 10px;
-}
+    .gallery-btn {
+      pointer-events: auto;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
 
-.gallery-dots {
-position: absolute;
-bottom: 12px;
-left: 50%;
-transform: translateX(-50%);
-display: flex;
-gap: 6px;
-}
+    .gallery-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
 
-.gallery-dot {
-width: 7px;
-height: 7px;
-border-radius: 999px;
-background: rgba(255,255,255,0.5);
-}
+    .gallery-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.5);
+    }
 
-.gallery-dot.active {
-width: 18px;
-background: #ffffff;
-}
-
+    .gallery-dot.active {
+      width: 18px;
+      background: #ffffff;
+    }
 
     footer {
       text-align: center;
@@ -507,24 +508,23 @@ background: #ffffff;
       opacity: 1;
       transform: translateY(0);
     }
-    @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Високата илюстрация на марионетката (фон, но не е background-image) -->
+  <!-- Високата илюстрация на марионетката -->
   <div class="marionette-column-wrapper">
-    <!-- смени пътя към твоята дълга картинка -->
     <img src="images/marionette-column.png"
          alt="Марионетка – ръка и кукла"
          class="marionette-column-image">
@@ -548,41 +548,36 @@ background: #ffffff;
   </div>
 
   <header id="about">
-  <div class="hero">
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-pill">Актриса • Куклен артист • Режисьор</div>
+        <h1>Аз съм Галина Савова.</h1>
+        <div class="hero-subtitle">Театър, кукли и кино – истории, които оживяват.</div>
 
-    <!-- Лява част: текст -->
-    <div class="hero-text">
-      <div class="hero-pill">Актриса • Куклен артист • Режисьор</div>
-      <h1>Аз съм Галина Савова.</h1>
-      <div class="hero-subtitle">Театър, кукли и кино – истории, които оживяват.</div>
+        <div class="hero-highlight">
+          Аз съм актриса с дългогодишен опит в кукления и драматичния театър и участие като кукловод във филмовата продукция
+          <strong>„Automata“ с Антонио Бандерас</strong>. Обичам да съчетавам поетика, движение и игра с предмети, за да разказвам истории за деца и възрастни.
+        </div>
 
-      <div class="hero-highlight">
-        Аз съм актриса с дългогодишен опит в кукления и драматичния театър и участие като кукловод във филмовата продукция 
-        <strong>„Automata“ с Антонио Бандерас</strong>. Обичам да съчетавам поетика, движение и игра с предмети, за да разказвам истории за деца и възрастни.
+        <div class="hero-meta">
+          <span>Базирана в София, България</span>
+          <span>Над 25 години професионален опит</span>
+          <span>Театър, кино, фестивали, ателиета</span>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#work" class="btn-primary">Виж избрани спектакли</a>
+          <a href="#video" class="btn-ghost">Видео портфолио</a>
+        </div>
       </div>
 
-      <div class="hero-meta">
-        <span>Базирана в София, България</span>
-        <span>Над 25 години професионален опит</span>
-        <span>Театър, кино, фестивали, ателиета</span>
-      </div>
-
-      <div class="hero-buttons">
-        <a href="#work" class="btn-primary">Виж избрани спектакли</a>
-        <a href="#video" class="btn-ghost">Видео портфолио</a>
-      </div>
+      <aside class="hero-photo-wrapper">
+        <div class="hero-photo-frame">
+          <img src="images/Logoimage.jpg" alt="Галина Савова" class="hero-photo">
+        </div>
+      </aside>
     </div>
-
-    <!-- Дясна част: портрет -->
-    <aside class="hero-photo-wrapper">
-      <div class="hero-photo-frame">
-        <img src="images/Logoimage.jpg" alt="Галина Савова" class="hero-photo">
-      </div>
-    </aside>
-
-  </div>
-</header>
-
+  </header>
 
   <section id="work">
     <div class="section-inner split-two">
@@ -649,39 +644,40 @@ background: #ffffff;
       <h2 class="section-title">Галерия</h2>
       <p class="section-subtitle">В момента снимките са примерни. Лесно можеш да ги смениш по-късно с твои кадри от сцена, репетиции и фестивали.</p>
 
-      <div class="gallery-track" id="galleryTrack">
+      <div class="gallery-wrapper">
+        <div class="gallery-track" id="galleryTrack">
 
-  <div class="gallery-slide"
-       style="background-image:url('images/image01.jpg');">
-    <div class="gallery-overlay"></div>
-    <div class="gallery-caption">"Кофичка с лопатка"</div>
-  </div>
+          <div class="gallery-slide"
+               style="background-image:url('images/image01.jpg');">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-caption">"Кофичка с лопатка"</div>
+          </div>
 
-  <div class="gallery-slide"
-       style="background-image:url('images/image02.jpg');">
-    <div class="gallery-overlay"></div>
-    <div class="gallery-caption">"Любопитното слонче"</div>
-  </div>
+          <div class="gallery-slide"
+               style="background-image:url('images/image02.jpg');">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-caption">"Любопитното слонче"</div>
+          </div>
 
-  <div class="gallery-slide"
-       style="background-image:url('images/image03.jpg');">
-    <div class="gallery-overlay"></div>
-    <div class="gallery-caption">"Ние, врабчетата"</div>
-  </div>
+          <div class="gallery-slide"
+               style="background-image:url('images/image03.jpg');">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-caption">"Ние, врабчетата"</div>
+          </div>
 
-  <div class="gallery-slide"
-       style="background-image:url('images/image04.JPG');">
-    <div class="gallery-overlay"></div>
-    <div class="gallery-caption">"Точка"</div>
-  </div>
+          <div class="gallery-slide"
+               style="background-image:url('images/image04.JPG');">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-caption">"Точка"</div>
+          </div>
 
-  <div class="gallery-slide"
-       style="background-image:url('images/image05.jpg');">
-    <div class="gallery-overlay"></div>
-    <div class="gallery-caption">Снимка 5</div>
-  </div>
+          <div class="gallery-slide"
+               style="background-image:url('images/image05.jpg');">
+            <div class="gallery-overlay"></div>
+            <div class="gallery-caption">Снимка 5</div>
+          </div>
 
-</div>
+        </div>
 
         <div class="gallery-controls">
           <button class="gallery-btn" id="prevBtn" aria-label="Предишна снимка">‹</button>
@@ -773,9 +769,3 @@ background: #ffffff;
 
 </body>
 </html>
-
-
-
-
-
-
