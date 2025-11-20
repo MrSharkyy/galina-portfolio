@@ -395,6 +395,17 @@
       text-align: center;
       padding: 6px;
     }
+    .qr-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 16px;
+      object-fit: contain;
+      background: #fff;
+      padding: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      align-self: center;
+    }
+
 
     .video-card-title {
       font-size: 14px;
@@ -508,6 +519,7 @@
       opacity: 1;
       transform: translateY(0);
     }
+    
 
     @keyframes fadeUp {
       from {
@@ -623,14 +635,14 @@
 
       <div class="video-grid">
         <article class="video-card">
-          <div class="qr-box">QR код<br>Видео 1</div>
+          <img src="images/video1_qr.png" class="qr-image" alt="QR код видео 1">
           <div class="video-card-title">Спектакълът „Дзак“</div>
           <p>Кратко видео от спектакълът "Дзак", на което съм режисъор.</p>
           <p><strong>Линк:</strong> <a href="https://share.google/bGxCo8KCg0n7bO0tZ" target="_blank" rel="noopener">Отвори видеото</a></p>
         </article>
 
         <article class="video-card">
-          <div class="qr-box">QR код<br>Видео 2</div>
+          <img src="images/video2_qr.png" class="qr-image" alt="QR код видео 2">
           <div class="video-card-title">Светлинка Trailer - Столичен Куклен Театър</div>
           <p>Поглед към представлението ми Светлинка.</p>
           <p><strong>Линк:</strong> <a href="https://share.google/aAZ6sOj75IFm0NJS9" target="_blank" rel="noopener">Отвори видеото</a></p>
@@ -769,4 +781,5 @@
 
 </body>
 </html>
+
 
