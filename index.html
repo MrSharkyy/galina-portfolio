@@ -271,6 +271,29 @@
       background: rgba(250,247,242,0.9);
       border: 1px solid rgba(0,0,0,0.04);
     }
+    .hero-photo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo-frame {
+  width: 280px;
+  height: 280px;
+  border-radius: 999px;
+  padding: 8px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.16);
+  backdrop-filter: blur(4px);
+  animation: fadeUp 1.2s ease both;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  object-fit: cover;
+}
 
     /* Sections */
     section {
@@ -482,6 +505,17 @@
       opacity: 1;
       transform: translateY(0);
     }
+    @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -512,37 +546,41 @@
   </div>
 
   <header id="about">
-    <div class="hero">
-      <div class="hero-text">
-        <div class="hero-pill">Актриса • Куклен артист • Режисьор</div>
-        <h1>Аз съм Галина Савова.</h1>
-        <div class="hero-subtitle">Театър, кукли и кино – истории, които оживяват.</div>
-        <div class="hero-highlight">
-          Аз съм актриса с дългогодишен опит в кукления и драматичния театър и участие като кукловод във филмовата продукция <strong>„Automata“ с Антонио Бандерас</strong>. Обичам да съчетавам поетика, движение и игра с предмети, за да разказвам истории за деца и възрастни.
-        </div>
-        <div class="hero-meta">
-          <span>Базирана в София, България</span>
-          <span>Над 25 години професионален опит</span>
-          <span>Театър, кино, фестивали, ателиета</span>
-        </div>
-        <div class="hero-buttons">
-          <a href="#work" class="btn-primary">Виж избрани спектакли</a>
-          <a href="#video" class="btn-ghost">Видео портфолио</a>
-        </div>
+  <div class="hero">
+
+    <!-- Лява част: текст -->
+    <div class="hero-text">
+      <div class="hero-pill">Актриса • Куклен артист • Режисьор</div>
+      <h1>Аз съм Галина Савова.</h1>
+      <div class="hero-subtitle">Театър, кукли и кино – истории, които оживяват.</div>
+
+      <div class="hero-highlight">
+        Аз съм актриса с дългогодишен опит в кукления и драматичния театър и участие като кукловод във филмовата продукция 
+        <strong>„Automata“ с Антонио Бандерас</strong>. Обичам да съчетавам поетика, движение и игра с предмети, за да разказвам истории за деца и възрастни.
       </div>
-      <aside class="hero-card">
-        <div class="hero-card-tag">Кратко за мен</div>
-        <h2>Актриса, която вярва в силата на играта.</h2>
-        <p>Работя със сцена, камера, кукли, маски и предмети. Вълнувам се от срещата с публиката – от бебета, които за първи път стъпват в театър, до възрастни, които се връщат към своето детство.</p>
-        <p>Като режисьор създавам спектакли за най-малките, в които звукът, жестът и образът са толкова важни, колкото и думите.</p>
-        <div class="hero-card-pill-row">
-          <span class="hero-card-pill">Куклен и драматичен театър</span>
-          <span class="hero-card-pill">Фестивали в България и чужбина</span>
-          <span class="hero-card-pill">Работа с деца и ателиета</span>
-        </div>
-      </aside>
+
+      <div class="hero-meta">
+        <span>Базирана в София, България</span>
+        <span>Над 25 години професионален опит</span>
+        <span>Театър, кино, фестивали, ателиета</span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#work" class="btn-primary">Виж избрани спектакли</a>
+        <a href="#video" class="btn-ghost">Видео портфолио</a>
+      </div>
     </div>
-  </header>
+
+    <!-- Дясна част: портрет -->
+    <aside class="hero-photo-wrapper">
+      <div class="hero-photo-frame">
+        <img src="images/Logoimage.jpg" alt="Галина Савова" class="hero-photo">
+      </div>
+    </aside>
+
+  </div>
+</header>
+
 
   <section id="work">
     <div class="section-inner split-two">
@@ -733,6 +771,7 @@
 
 </body>
 </html>
+
 
 
 
