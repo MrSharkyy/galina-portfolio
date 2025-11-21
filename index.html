@@ -405,6 +405,18 @@
       box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       align-self: center;
     }
+    .qr-link {
+  text-decoration: none;
+  color: inherit;
+  align-self: center;
+}
+
+/* за да работи hover ефектът когато мишката е върху линка */
+.qr-link:hover .qr-poster {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.26);
+  filter: brightness(1.15);
+}
 
 
     .video-card-title {
@@ -531,6 +543,47 @@
         transform: translateY(0);
       }
     }
+    /* --- QR кодове тип „театрален плакат“ --- */
+
+.qr-poster {
+  width: 140px;
+  padding: 12px;
+  background: #ffffffdd;
+  border-radius: 16px;
+  border: 2px solid #c9a77a;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  text-align: center;
+  backdrop-filter: blur(2px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.qr-poster img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.qr-poster .qr-title {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #5a4633;
+  letter-spacing: 0.4px;
+}
+
+/* Glow + прожектор при hover */
+.qr-poster:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.26);
+  filter: brightness(1.15);
+}
+
+/* Малка текстура за плакатен ефект */
+.qr-poster {
+  background-image: url("https://www.transparenttextures.com/patterns/paper-3.png");
+}
+
   </style>
 </head>
 <body>
@@ -635,18 +688,38 @@
 
       <div class="video-grid">
         <article class="video-card">
-          <img src="images/video1_qr.png" class="qr-image" alt="QR код видео 1">
-          <div class="video-card-title">Спектакълът „Дзак“</div>
-          <p>Кратко видео от спектакълът "Дзак", на което съм режисъор.</p>
-          <p><strong>Линк:</strong> <a href="https://share.google/bGxCo8KCg0n7bO0tZ" target="_blank" rel="noopener">Отвори видеото</a></p>
-        </article>
+  <a href="https://www.facebook.com/puppets.starazagora/videos/1432636721612400/"
+     target="_blank" rel="noopener"
+     class="qr-link">
+    <div class="qr-poster">
+      <img src="images/video1_qr.png" alt="QR код видео 1">
+      <div class="qr-title">„Дзак“</div>
+    </div>
+  </a>
+
+  <div class="video-card-title">Фрагмент от сценична работа</div>
+  <p>Кратко видео, в което можете да видите енергията ми на сцена, работата с кукла и контакт с публиката.</p>
+  <p><strong>Линк:</strong> <a href="https://www.facebook.com/puppets.starazagora/videos/1432636721612400/"
+        target="_blank" rel="noopener">Отвори видеото</a></p>
+</article>
+
 
         <article class="video-card">
-          <img src="images/video2_qr.png" class="qr-image" alt="QR код видео 2">
-          <div class="video-card-title">Светлинка Trailer - Столичен Куклен Театър</div>
-          <p>Поглед към представлението ми Светлинка.</p>
-          <p><strong>Линк:</strong> <a href="https://share.google/aAZ6sOj75IFm0NJS9" target="_blank" rel="noopener">Отвори видеото</a></p>
-        </article>
+  <a href="https://www.youtube.com/watch?v=OZpHpeDBkxg"
+     target="_blank" rel="noopener"
+     class="qr-link">
+    <div class="qr-poster">
+      <img src="images/video2_qr.png" alt="QR код видео 2">
+      <div class="qr-title">„Светлинка“</div>
+    </div>
+  </a>
+
+  <div class="video-card-title">Зад кулисите / кукловодна техника</div>
+  <p>Поглед към процеса – репетиции, кукловодство отблизо и усещането за игра преди срещата с публиката.</p>
+  <p><strong>Линк:</strong> <a href="https://www.youtube.com/watch?v=OZpHpeDBkxg"
+        target="_blank" rel="noopener">Отвори видеото</a></p>
+</article>
+
       </div>
     </div>
   </section>
@@ -775,6 +848,5 @@
 
 </body>
 </html>
-
 
 
