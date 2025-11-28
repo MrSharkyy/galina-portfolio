@@ -492,6 +492,48 @@
       flex-direction: column;
       gap: 10px;
     }
+    .video-player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 10px;
+}
+
+.video-box {
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 видео */
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.video-desc {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
 
     .qr-box {
       width: 120px;
@@ -906,43 +948,48 @@
 
 
   <section id="video">
-    <div class="section-inner">
-      <h2 class="section-title">Видео портфолио</h2>
-      <p class="section-subtitle">Селекция от кадри, които показват част от моята работа.</p>
+  <div class="section-inner">
+    <h2 class="section-title">Видео портфолио</h2>
+    <p class="section-subtitle">Кратки откъси, които най-добре показват сценичната ми енергия, работа с кукли и актьорски подход.</p>
 
-      <div class="video-grid">
-        <article class="video-card">
-  <a href="https://www.facebook.com/puppets.starazagora/videos/1432636721612400/"
-     target="_blank" rel="noopener"
-     class="qr-link">
-    <div class="qr-poster">
-      <img src="images/video1_qr.png" alt="QR код видео 1">
-      <div class="qr-title">„Дзак“</div>
-    </div>
-  </a>
+    <div class="video-player-grid">
 
-  <div class="video-card-title">„Дзак“ - трейлър</div>
-  <p>Спектакълът „Дзак“ разказва без думи историята на едно цвете и неговите приятели, обитатели, които се крият в неговия дом. Това са любопитната калинка, паячето и пеперудките.</p>
-</article>
-
-
-        <article class="video-card">
-  <a href="https://www.youtube.com/watch?v=OZpHpeDBkxg"
-     target="_blank" rel="noopener"
-     class="qr-link">
-    <div class="qr-poster">
-      <img src="images/video2_qr.png" alt="QR код видео 2">
-      <div class="qr-title">„Светлинка“</div>
-    </div>
-  </a>
-
-  <div class="video-card-title">„Светлинка“ - трейлър</div>
-  <p>СВЕТЛИНКА е куклено представление без думи за деца над 2 годишна възраст. Спектакълът развива усещането и възприятието на малките деца за пространство,  тъмнина, светлина, цветове и музика.</p>
-</article>
-
+      <!-- Видео 1 -->
+      <div class="video-box">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/OZpHpeDBkxg"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <h3 class="video-title">Фрагмент от сценична работа</h3>
+        <p class="video-desc">
+          Откъс, който показва динамиката ми на сцена, работа с обекти и взаимодействие с публиката.
+        </p>
       </div>
+
+      <!-- Видео 2 -->
+      <div class="video-box">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/VIDEO_ID_2"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <h3 class="video-title">Зад кулисите / кукловодна техника</h3>
+        <p class="video-desc">
+          Поглед към процеса на репетиции, детайли в кукловодството и творческата подготовка преди спектакъл.
+        </p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <section id="gallery">
     <div class="section-inner">
