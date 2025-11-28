@@ -477,62 +477,93 @@
   color: var(--text-main);
 }
 
-    /* Video section */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-    }
-
-    .video-card {
-      background: rgba(250,247,242,0.9);
-      border-radius: 18px;
-      padding: 16px 14px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .video-player-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
-  margin-top: 10px;
+/* VIDEO SLIDER */
+.video-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: var(--shadow-soft);
+  background: #000;
+  padding-bottom: 10px;
+  margin-top: 20px;
 }
 
-.video-box {
-  background: rgba(255,255,255,0.92);
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: var(--shadow-soft);
+.video-slider-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.video-slide {
+  flex: 0 0 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
 }
 
 .video-frame {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 видео */
-  border-radius: 14px;
+  padding-bottom: 56.25%;
+  border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .video-frame iframe {
   position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
+  inset: 0;
 }
 
-.video-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 6px;
+.video-caption {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #ddd;
 }
 
-.video-desc {
-  font-size: 14px;
-  color: var(--text-soft);
-  line-height: 1.5;
+/* Buttons */
+.video-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
+
+#videoPrev { left: 14px; }
+#videoNext { right: 14px; }
+
+/* Dots */
+.video-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.video-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.video-dot.active {
+  width: 22px;
+  background: #fff;
+}
+
 
 
     .qr-box {
@@ -947,48 +978,58 @@
 </section>
 
 
-  <section id="video">
+<section id="video">
   <div class="section-inner">
     <h2 class="section-title">Видео портфолио</h2>
-    <p class="section-subtitle">Кратки откъси, които най-добре показват сценичната ми енергия, работа с кукли и актьорски подход.</p>
+    <p class="section-subtitle">Видео откъси, репетиции, задкулисни моменти и сценична работа.</p>
 
-    <div class="video-player-grid">
+    <div class="video-slider-wrapper">
+      <div class="video-slider-track" id="videoTrack">
 
-      <!-- Видео 1 -->
-      <div class="video-box">
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/OZpHpeDBkxg"
-            frameborder="0"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
+        <!-- Видео 1 -->
+        <div class="video-slide">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/OZpHpeDBkxg"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="video-caption">Фрагмент от сценична работа</div>
         </div>
-        <h3 class="video-title">Фрагмент от сценична работа</h3>
-        <p class="video-desc">
-          Откъс, който показва динамиката ми на сцена, работа с обекти и взаимодействие с публиката.
-        </p>
+
+        <!-- Видео 2 -->
+        <div class="video-slide">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/wrZZ8y9BANA"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="video-caption">Кукловодна техника / репетиции</div>
+        </div>
+
+        <!-- Видео 3 (примерно) -->
+        <div class="video-slide">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/mnJu1nf2jzo"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
+          <div class="video-caption">Работа с публика</div>
+        </div>
+
       </div>
 
-      <!-- Видео 2 -->
-      <div class="video-box">
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/VIDEO_ID_2"
-            frameborder="0"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-        </div>
-        <h3 class="video-title">Зад кулисите / кукловодна техника</h3>
-        <p class="video-desc">
-          Поглед към процеса на репетиции, детайли в кукловодството и творческата подготовка преди спектакъл.
-        </p>
-      </div>
+      <button class="video-btn" id="videoPrev">‹</button>
+      <button class="video-btn" id="videoNext">›</button>
 
+      <div class="video-dots" id="videoDots"></div>
     </div>
+
   </div>
 </section>
+
 
 
   <section id="gallery">
@@ -1110,6 +1151,46 @@
 
     renderDots();
     updateSlider();
+    // VIDEO SLIDER
+const videoTrack = document.getElementById("videoTrack");
+const videoSlides = Array.from(document.querySelectorAll(".video-slide"));
+const videoDots = document.getElementById("videoDots");
+
+let videoIndex = 0;
+
+function renderVideoDots() {
+  videoDots.innerHTML = "";
+  videoSlides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.className = "video-dot" + (i === videoIndex ? " active" : "");
+    dot.addEventListener("click", () => {
+      videoIndex = i;
+      updateVideoSlider();
+    });
+    videoDots.appendChild(dot);
+  });
+}
+
+function updateVideoSlider() {
+  videoTrack.style.transform = `translateX(-${videoIndex * 100}%)`;
+  document.querySelectorAll(".video-dot").forEach((dot, i) => {
+    dot.classList.toggle("active", i === videoIndex);
+  });
+}
+
+document.getElementById("videoPrev").addEventListener("click", () => {
+  videoIndex = (videoIndex - 1 + videoSlides.length) % videoSlides.length;
+  updateVideoSlider();
+});
+
+document.getElementById("videoNext").addEventListener("click", () => {
+  videoIndex = (videoIndex + 1) % videoSlides.length;
+  updateVideoSlider();
+});
+
+renderVideoDots();
+updateVideoSlider();
+
     document.querySelectorAll('.accordion-title').forEach(button => {
   button.addEventListener('click', () => {
     const content = button.nextElementSibling;
