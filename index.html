@@ -774,6 +774,126 @@
 .qr-poster {
   background-image: url("https://www.transparenttextures.com/patterns/paper-3.png");
 }
+/* ---------- MOBILE FIXES ---------- */
+@media (max-width: 768px) {
+
+  /* NAV – прави менюто едноредово и компактно */
+  .nav-inner {
+    padding: 10px 14px;
+    flex-wrap: nowrap;
+  }
+
+  .nav-left {
+    gap: 6px;
+  }
+
+  .nav-logo-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .nav-name {
+    font-size: 12px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  /* Хамбургер меню (ако искаш мога да го направя) */
+  /* за момента само уплътняваме */
+
+
+
+  /* HERO – по-малки текстове и повече въздух */
+  .hero {
+    padding: 20px 16px 40px;
+    gap: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-highlight {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .hero-meta {
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  /* Фото – по-малко, за да не бута съдържанието */
+  .hero-photo-frame {
+    width: 200px;
+    height: 200px;
+    padding: 6px;
+  }
+
+  /* Marionette image – ОГРОМНО подобрение */
+  .marionette-column-wrapper {
+    opacity: 0.25;            /* по-леко, ненатрапчиво */
+    transform: translateX(-50%) scale(0.75);
+  }
+
+  .marionette-column-image {
+    min-height: 105vh;       /* намалена височина */
+    width: 260px;            /* по-тънка */
+  }
+
+
+  /* SECTIONS – по-добър баланс */
+  section {
+    padding: 30px 16px 0;
+  }
+
+  .section-inner {
+    padding: 22px 18px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  /* VIDEO CAROUSEL */
+  .video-frame iframe {
+    height: 210px !important; /* правилно съотношение на телефона */
+  }
+
+  .video-carousel {
+    margin-top: 12px;
+  }
+
+
+  /* BUTTONS */
+  .btn-primary,
+  .btn-ghost {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  /* GALLERY */
+  .gallery-slide {
+    height: 240px;
+  }
+
+  /* Awards cards */
+  .award-card {
+    padding: 14px 16px;
+  }
+
+}
+
 
   </style>
 </head>
